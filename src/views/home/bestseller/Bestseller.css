@@ -1,0 +1,151 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+.bestseller-container {
+  width: 100%;
+  padding: 90px 8%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 60px 40px;
+  align-items: center;
+  position: relative;
+}
+
+.bestseller-text {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.badge {
+  position: relative;
+  display: inline-block;
+  padding: 8px 20px 8px 60px; 
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  font-family: 'Arial', sans-serif;
+  text-align: left;
+  line-height: 1.6;
+  z-index: 1;
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+  align-items: center; 
+}
+
+.badge {
+  position: relative;
+  display: inline-block;
+  padding: 70px 50px 30px 60px; 
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+  line-height: 1.6;
+  z-index: 1;
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+  align-items: center; 
+}
+.badge::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0; 
+  bottom: 0;
+  background: url('../../../assets/bg.png') no-repeat left center ;
+  background-size:  120%; 
+  border-radius: 5px;
+  z-index: -1;
+  display: block;
+  background-size: 150% auto; 
+background-position: right ;
+}
+
+.title-different {
+  font-size: 28px;
+  font-weight: 700;
+  color: #111;
+  font-family: "Playfair Display", serif;
+}
+
+
+
+
+.description {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.6;
+  width: 70%; 
+}
+
+
+.see-products {
+ background: linear-gradient(135deg, #602885, #37164D);
+  color: #fff;
+  border: 2px solid #DAB0F5; 
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 6px 15px #DAB0F5;
+  transition: all 0.3s ease;
+  width: fit-content;
+}
+
+
+.see-products:hover {
+  background: #4418a8;
+}
+
+
+.bestseller-image {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bestseller-image img {
+  width: 80%; 
+  max-width: 300px;
+  border-radius: 12px;
+  object-fit: cover;
+  z-index: 2;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+
+.bestseller-image::before {
+  content: "";
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  background: url("../../../assets/bg wd.png") no-repeat center;
+  background-size: contain;
+  z-index: 1;
+}
+
+@media (max-width: 992px) {
+  .bestseller-container {
+    grid-template-columns: 1fr;
+    grid-gap: 80px;
+    text-align: center;
+  }
+
+  .bestseller-text {
+    align-items: center;
+  }
+
+  .see-products {
+    margin: 0 auto;
+  }
+
+  .bestseller-image::before {
+    width: 280px;
+    height: 280px;
+  }
+}

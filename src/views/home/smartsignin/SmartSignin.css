@@ -1,0 +1,170 @@
+:root{
+    --card-bg-start: #5b19ff;
+    --card-bg-end: #8a2be2;
+    --card-radius: 16px;
+    --card-padding: 36px 44px;
+    --card-width: min(900px, 86%);
+    --marquee-speed: 70s; 
+  }
+  
+  .product-hero{
+    position: relative;
+    overflow: hidden;
+    height: 300px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fafafa;
+  }
+  
+  .marquee{
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 50%;          
+    display: flex;
+    align-items: center;
+    pointer-events: none; 
+    overflow: hidden;
+  }
+  
+  
+  .marquee.row-top { top: 0; }
+  .marquee.row-bottom { bottom: 0; }
+  
+  
+  .marquee-track{
+    display: flex;
+    gap: 18px;
+    align-items: center;
+    will-change: transform;
+    padding: 8px 12px;
+   
+    animation: scroll-left var(--marquee-speed) linear infinite;
+  }
+  
+  
+  .marquee.row-bottom .marquee-track {
+    animation: scroll-right calc(var(--marquee-speed) * 1.12) linear infinite;
+  }
+  
+  .marquee-item{
+    width: 150px;
+    height: 110px;
+    border-radius: 10px;
+    overflow: hidden;
+    flex: 0 0 auto;
+    box-shadow: 0 6px 20px rgba(7,7,7,0.12);
+    background: #fff;
+    border: 4px solid rgba(255,255,255,0.85);
+  }
+  
+  .marquee-item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transform: scale(1.02);
+    transition: transform .45s ease;
+  }
+  
+  
+  .marquee-item:hover img{
+    transform: scale(1.08);
+  }
+  
+  .info-card{
+    position: relative;
+    z-index: 6; /* above the marquees and overlay */
+    width: var(--card-width);
+    padding: var(--card-padding);
+    border-radius: var(--card-radius);
+    text-align: center;
+    box-shadow: 0 12px 40px rgba(152, 107, 231, 0.36);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border: 1px solid rgba(255,255,255,0.08);
+    color: white;
+    background: #602885;
+    transform: translateY(-8px);
+    pointer-events: auto; 
+  }
+  
+  
+  .info-title{
+    margin: 0 0 6px;
+    font-weight: 600;
+    font-size: 20px;
+    letter-spacing: 0.2px;
+  }
+  
+  .info-sub{
+    margin: 0 0 14px;
+    opacity: 0.92;
+    font-size: 14px;
+  }
+  
+  
+  .cta-btn{
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255,255,255,0.08);
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.12);
+    padding: 10px 18px;
+    border-radius: 999px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform .16s ease, background .16s ease;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.18), inset 0 -1px 0 rgba(255,255,255,0.02);
+    pointer-events: auto;
+  }
+  
+  .cta-btn:active{ transform: translateY(1px) }
+  .cta-btn:hover{ transform: translateY(-3px); background: rgba(255,255,255,0.12); }
+  
+  /* arrow icon */
+  .cta-arrow{ stroke: white; stroke-linecap: round; stroke-linejoin: round; color: white; }
+  
+  /* subtle overlay to help contrast the card */
+  .hero-overlay{
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(255,255,255,0.00), rgba(0,0,0,0.06));
+    z-index: 4;
+    pointer-events: none;
+  }
+  
+  
+  @keyframes scroll-left {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-33.3333%); }
+  }
+  
+  @keyframes scroll-right {
+    0% { transform: translateX(-33.3333%); }
+    100% { transform: translateX(0); }
+  }
+  
+  @media (max-width: 1200px){
+    .product-hero{ height: 320px; }
+    .marquee-item{ width: 140px; height: 98px; }
+  }
+  
+  @media (max-width: 900px){
+    .product-hero{ height: 360px; }
+    .marquee-item{ width: 120px; height: 90px; }
+    .info-card{ padding: 26px 20px; --card-padding: 26px 20px;}
+    .info-title{ font-size: 18px; }
+    .info-sub{ font-size: 13px; }
+  }
+  
+  @media (max-width: 480px){
+    .product-hero{ height: 420px; } 
+    .marquee-item{ width: 100px; height: 80px; gap: 10px;}
+    .info-card{ width: 92%; padding: 18px; border-radius: 12px; }
+    .info-title{ font-size: 16px; }
+    .info-sub{ font-size: 13px; }
+  }
+  

@@ -1,0 +1,13 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Public Sans", sans-serif !important;
+  }
+  .css-1fncnt8-MuiChip-root::before {
+    background: transparent !important;
+  }
+  .css-fyypgv{
+    padding-top:0 !important;
+    padding-bottom: 0 !important;
+  }
